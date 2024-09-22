@@ -1,3 +1,4 @@
+// calculate btn
 let calculatebtn=document.getElementById('calculate').addEventListener('click' ,function(){
   let income=parseFloat(document.getElementById('income').value);
   let software=parseFloat(document.getElementById('software').value) ;
@@ -9,8 +10,10 @@ let calculatebtn=document.getElementById('calculate').addEventListener('click' ,
   let newBalance = income - calculate ;
   let balance=document.getElementById('balance').innerText=newBalance
 
+
   
-     //  Results Summary
+  
+//  Results Summary
      document.getElementById('results').classList.remove('hidden')
 
 })  ;
@@ -30,8 +33,6 @@ document.getElementById('calculate-savings').addEventListener('click', function(
      let balance=document.getElementById('balance').innerText=newBalance
      
 
-
-
      const savingpars=(balance*savings)/100 ;
      document.getElementById('savings-amount').innerText=savingpars ;
 
@@ -40,6 +41,39 @@ document.getElementById('calculate-savings').addEventListener('click', function(
 
     //  Results Summary
     document.getElementById('results').classList.remove('hidden')
+    
+
+}) ;
+
+// historyTab hober Color apply
+
+document.getElementById('history-tab').addEventListener('click',function(){
+     
+     
+})
+
+
+
+const assistantTab=document.getElementById('assistant-tab') ;
+const historyTab=document.getElementById('history-tab');
+      historyTab.addEventListener('click',function(){
+     historyTab.classList.add(
+          "text-white",
+          "bg-gradient-to-r",
+          "from-blue-500",
+          "to-purple-600"
+     ) ;
+     historyTab.classList.remove("text-gray-600");
+
+     assistantTab.classList.remove(
+          "text-white",
+          "bg-gradient-to-r",
+          "from-blue-500",
+          "to-purple-600"
+     );
+     assistantTab.classList.add("text-gray-600");
+
+     document.getElementById('expense-form').classList.add('hidden')
     
 
 })
