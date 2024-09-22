@@ -10,13 +10,30 @@ let calculatebtn=document.getElementById('calculate').addEventListener('click' ,
   let newBalance = income - calculate ;
   let balance=document.getElementById('balance').innerText=newBalance
 
-
-  
   
 //  Results Summary
      document.getElementById('results').classList.remove('hidden')
 
-})  ;
+// Expense History start
+const historyItem=document.createElement('div') ;
+historyItem.className='bg-white p-3 rounded-md border-1-2 border-indigo-500' ;
+
+historyItem.innerHTML=`
+
+<p class="text-xs text-gray-500">${new Date().toLocaleDateString()}</p>
+<p class="text-xs text-gray-500">Income:$${income}</p>
+<p class="text-xs text-gray-500">TotalExpenses:$${totalExpenses}</p>
+<p class="text-xs text-gray-500">Balance:$${balance}</p>
+
+`;
+
+const historyContainer=document.getElementById('history-list');
+
+historyContainer.insertBefore(historyItem,historyContainer.firstChild) ;
+
+// Expense History End
+
+});
 
 
 document.getElementById('calculate-savings').addEventListener('click', function(){
